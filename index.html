@@ -3,51 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TruckSetu India - Marketplace Store</title>
+    <title>TruckSetu India - Commercial Marketplace</title>
     <!-- Google Fonts & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #f59e0b;
             --primary-dark: #d97706;
-            --secondary: #1e293b;
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --card-border: #334155;
+            --bg: #090d16;
+            --card-bg: #131b2e;
+            --card-border: #1e293b;
             --text: #f8fafc;
             --text-muted: #94a3b8;
-            --accent: #22c55e;
+            --accent-green: #22c55e;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
             background-color: var(--bg);
             color: var(--text);
-            padding-bottom: 90px;
+            padding-bottom: 80px;
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Header */
+        /* Compact Header */
         header {
-            background: #090d16;
+            background: rgba(9, 13, 22, 0.92);
+            backdrop-filter: blur(12px);
             color: white;
-            padding: 16px 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            padding: 10px 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid var(--card-border);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .header-container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -57,178 +58,178 @@
         .logo-title {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             text-decoration: none;
             color: white;
         }
 
         .logo-title i {
-            font-size: 26px;
+            font-size: 20px;
             color: var(--primary);
         }
 
         .logo-title h1 {
-            font-size: 22px;
+            font-size: 17px;
             font-weight: 800;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
         }
 
         .btn-download-header {
             background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            color: white;
-            padding: 10px 18px;
-            border-radius: 8px;
+            color: #000;
+            padding: 6px 14px;
+            border-radius: 20px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            transition: all 0.2s;
+            font-weight: 800;
+            font-size: 12px;
             display: flex;
             align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+            gap: 6px;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+            transition: all 0.2s;
         }
 
         .btn-download-header:hover {
             transform: translateY(-1px);
-            box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
         }
 
-        /* Main Container */
+        /* Container */
         .container {
-            max-width: 1100px;
-            margin: 24px auto;
-            padding: 0 16px;
+            max-width: 1000px;
+            margin: 12px auto;
+            padding: 0 12px;
         }
 
-        /* App Installation Promo Banner */
-        .app-promo-card {
-            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
-            border: 1px solid #6366f1;
-            border-radius: 16px;
-            padding: 22px;
-            margin-bottom: 24px;
-            box-shadow: 0 8px 25px rgba(49, 46, 129, 0.4);
+        /* Ultra-Sleek Compact App Strip */
+        .app-strip-banner {
+            background: linear-gradient(135deg, rgba(30, 27, 75, 0.8) 0%, rgba(49, 46, 129, 0.8) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin-bottom: 14px;
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            gap: 16px;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .promo-content {
-            max-width: 680px;
+        .strip-text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #e0e7ff;
         }
 
-        .promo-badge {
-            display: inline-block;
+        .strip-badge {
             background: var(--primary);
             color: #000;
-            font-weight: 800;
             font-size: 11px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-
-        .promo-content h2 {
-            font-size: 20px;
             font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 6px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            white-space: nowrap;
         }
 
-        .promo-content p {
-            font-size: 14px;
-            color: #c7d2fe;
-            line-height: 1.4;
+        .strip-desc {
+            font-weight: 600;
+            line-height: 1.2;
         }
 
-        .btn-promo-download {
-            background: #22c55e;
+        .strip-desc span {
+            color: #93c5fd;
+            font-size: 11px;
+            display: block;
+            font-weight: 400;
+        }
+
+        .btn-strip-install {
+            background: var(--accent-green);
             color: #000;
-            padding: 12px 22px;
-            border-radius: 10px;
+            padding: 7px 14px;
+            border-radius: 8px;
             font-weight: 800;
-            font-size: 14px;
+            font-size: 12px;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
-            transition: transform 0.2s;
+            gap: 5px;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+            transition: transform 0.15s;
         }
 
-        .btn-promo-download:hover {
-            transform: scale(1.03);
-            background: #16a34a;
-            color: #fff;
+        .btn-strip-install:hover {
+            transform: scale(1.02);
         }
 
-        /* Seller Banner */
+        /* Seller Profile Banner */
         .seller-banner {
             background: var(--card-bg);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 14px 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
             border: 1px solid var(--card-border);
-            margin-bottom: 24px;
+            margin-bottom: 14px;
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
         }
 
         .seller-info h2 {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 800;
             color: var(--text);
-            margin-bottom: 6px;
+            margin-bottom: 2px;
+            text-transform: capitalize;
         }
 
         .seller-info p {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 12px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         .seller-stats {
             display: flex;
-            gap: 16px;
+            gap: 10px;
         }
 
         .stat-badge {
-            background: #0f172a;
-            padding: 10px 18px;
-            border-radius: 10px;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 6px 12px;
+            border-radius: 8px;
             border: 1px solid var(--card-border);
             text-align: center;
+            min-width: 65px;
         }
 
         .stat-badge span {
             display: block;
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 800;
             color: var(--primary);
         }
 
         .stat-badge label {
-            font-size: 12px;
+            font-size: 10px;
             color: var(--text-muted);
+            text-transform: uppercase;
         }
 
         /* Section Title */
         .section-title {
-            font-size: 20px;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 18px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+            color: #cbd5e1;
         }
 
         .section-title i {
@@ -238,18 +239,18 @@
         /* Truck Grid */
         .truck-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
         }
 
         /* Truck Card */
         .truck-card {
             background: var(--card-bg);
-            border-radius: 14px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             border: 1px solid var(--card-border);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, border-color 0.2s;
             display: flex;
             flex-direction: column;
             cursor: pointer;
@@ -257,19 +258,18 @@
         }
 
         .truck-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            transform: translateY(-3px);
             border-color: var(--primary);
         }
 
         .truck-card.highlighted-shared {
             border: 2px solid var(--primary) !important;
-            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
         }
 
         .truck-img-wrapper {
             width: 100%;
-            height: 220px;
+            height: 180px;
             background: #090d16;
             position: relative;
             overflow: hidden;
@@ -286,18 +286,18 @@
 
         .badge-status {
             position: absolute;
-            top: 12px;
-            right: 12px;
-            padding: 5px 12px;
+            top: 10px;
+            right: 10px;
+            padding: 4px 9px;
             border-radius: 6px;
-            font-size: 12px;
+            font-size: 10px;
             font-weight: 800;
             letter-spacing: 0.5px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.5);
         }
 
         .badge-available {
-            background: var(--accent);
+            background: var(--accent-green);
             color: #000;
         }
 
@@ -308,60 +308,63 @@
 
         .badge-shared {
             position: absolute;
-            top: 12px;
-            left: 12px;
+            top: 10px;
+            left: 10px;
             background: var(--primary);
             color: #000;
-            padding: 5px 12px;
+            padding: 4px 9px;
             border-radius: 6px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 800;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.5);
         }
 
         .truck-details {
-            padding: 18px;
+            padding: 14px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
         .truck-title {
-            font-size: 19px;
+            font-size: 16px;
             font-weight: 800;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             color: var(--text);
             line-height: 1.3;
         }
 
         .truck-price {
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 800;
             color: var(--primary);
-            margin-bottom: 14px;
+            margin-bottom: 10px;
         }
 
         .truck-meta {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            font-size: 13px;
+            gap: 6px;
+            font-size: 12px;
             color: var(--text-muted);
-            margin-bottom: 18px;
-            background: #0f172a;
-            padding: 10px 12px;
+            margin-bottom: 12px;
+            background: #090d16;
+            padding: 8px 10px;
             border-radius: 8px;
         }
 
         .truck-meta div {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .truck-meta i {
             color: var(--primary);
-            width: 14px;
+            width: 12px;
         }
 
         .btn-contact {
@@ -369,18 +372,18 @@
             width: 100%;
             background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             color: white;
-            padding: 12px;
+            padding: 10px;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 13px;
             cursor: pointer;
             transition: all 0.2s;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+            gap: 6px;
+            box-shadow: 0 3px 8px rgba(37, 99, 235, 0.3);
         }
 
         .btn-contact:hover {
@@ -400,26 +403,26 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
-            padding: 16px;
+            padding: 14px;
             overflow-y: auto;
         }
 
         .modal-card {
             background: var(--card-bg);
-            border-radius: 18px;
-            max-width: 520px;
+            border-radius: 16px;
+            max-width: 480px;
             width: 100%;
-            padding: 24px;
+            padding: 18px;
             border: 1px solid var(--card-border);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             position: relative;
-            animation: popIn 0.25s ease-out;
+            animation: popIn 0.2s ease-out;
             max-height: 90vh;
             overflow-y: auto;
         }
 
         @keyframes popIn {
-            from { transform: scale(0.92); opacity: 0; }
+            from { transform: scale(0.95); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
 
@@ -427,37 +430,36 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .modal-header h3 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
             color: var(--text);
         }
 
         .btn-close {
-            background: #0f172a;
+            background: #090d16;
             border: 1px solid var(--card-border);
             color: var(--text-muted);
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .modal-gallery {
             width: 100%;
-            height: 250px;
-            border-radius: 12px;
+            height: 220px;
+            border-radius: 10px;
             overflow: hidden;
             background: #000;
-            margin-bottom: 16px;
-            position: relative;
+            margin-bottom: 14px;
         }
 
         .modal-gallery img {
@@ -469,28 +471,27 @@
         .modal-spec-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 20px;
+            gap: 10px;
+            margin-bottom: 16px;
         }
 
         .spec-item {
-            background: #0f172a;
-            padding: 12px;
-            border-radius: 10px;
+            background: #090d16;
+            padding: 10px;
+            border-radius: 8px;
             border: 1px solid var(--card-border);
         }
 
         .spec-item label {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--text-muted);
             display: block;
             margin-bottom: 2px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .spec-item span {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             color: var(--text);
         }
@@ -498,119 +499,114 @@
         .modal-cta-box {
             background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
             border: 1px solid #4338ca;
-            padding: 18px;
-            border-radius: 14px;
+            padding: 14px;
+            border-radius: 12px;
             text-align: center;
-            margin-top: 10px;
         }
 
         .modal-cta-box h4 {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             color: white;
         }
 
         .modal-cta-box p {
-            font-size: 13px;
+            font-size: 12px;
             color: #c7d2fe;
-            margin-bottom: 14px;
+            margin-bottom: 10px;
         }
 
         .btn-playstore {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             width: 100%;
             background: var(--primary);
             color: #000;
-            padding: 14px;
-            border-radius: 10px;
+            padding: 11px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 15px;
-            transition: background 0.2s;
-            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+            font-size: 13px;
+            box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
         }
 
-        .btn-playstore:hover {
-            background: var(--primary-dark);
-            color: #fff;
-        }
-
-        /* Floating Bottom App Bar */
+        /* Floating Mobile Bar */
         .floating-app-bar {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: #090d16;
-            border-top: 2px solid var(--primary);
-            padding: 12px 20px;
+            background: rgba(9, 13, 22, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--primary);
+            padding: 8px 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 999;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.6);
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.5);
         }
 
         .floating-app-text {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             color: #fff;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         .floating-app-text i {
-            font-size: 20px;
+            font-size: 16px;
             color: var(--primary);
         }
 
         .btn-floating-install {
             background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 8px;
+            color: #000;
+            padding: 6px 14px;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 13px;
+            font-size: 12px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             white-space: nowrap;
-            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
         }
 
         .loading-state, .error-state {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 16px;
             color: var(--text-muted);
         }
 
         .loading-spinner {
-            font-size: 36px;
+            font-size: 30px;
             color: var(--primary);
             animation: spin 1s linear infinite;
-            margin-bottom: 14px;
+            margin-bottom: 10px;
         }
 
         @keyframes spin {
             100% { transform: rotate(360deg); }
         }
 
-        @media (max-width: 600px) {
-            .app-promo-card {
-                flex-direction: column;
-                align-items: flex-start;
+        @media (max-width: 500px) {
+            .app-strip-banner {
+                padding: 8px 10px;
             }
-            .btn-promo-download {
-                width: 100%;
-                justify-content: center;
+            .strip-text {
+                font-size: 11px;
             }
-            .floating-app-text span {
-                font-size: 12px;
+            .btn-strip-install {
+                padding: 6px 10px;
+                font-size: 11px;
+            }
+            .truck-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -624,22 +620,24 @@
                 <h1>TruckSetu India</h1>
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.aistudio.trucksetuindia.nwzpx" target="_blank" class="btn-download-header">
-                <i class="fa-brands fa-google-play"></i> Get Official App
+                <i class="fa-brands fa-google-play"></i> Get App
             </a>
         </div>
     </header>
 
     <div class="container">
 
-        <!-- High-Converting Promo Banner -->
-        <div class="app-promo-card">
-            <div class="promo-content">
-                <div class="promo-badge"><i class="fa-solid fa-shield-halved"></i> 1,000+ VERIFIED TRUCKS</div>
-                <h2>Want to Check 1,000+ Commercial Heavy Vehicles?</h2>
-                <p>Install the TruckSetu India App to view seller mobile numbers, RC copies, insurance validity & deal directly without brokerage!</p>
+        <!-- Compact Ultra-Sleek App Announcement Strip -->
+        <div class="app-strip-banner">
+            <div class="strip-text">
+                <div class="strip-badge"><i class="fa-solid fa-fire"></i> 1,000+ TRUCKS</div>
+                <div class="strip-desc">
+                    <strong>Check 1,000+ Heavy Vehicles on App</strong>
+                    <span>Direct Seller Numbers, RC & Zero Brokerage</span>
+                </div>
             </div>
-            <a href="https://play.google.com/store/apps/details?id=com.aistudio.trucksetuindia.nwzpx" target="_blank" class="btn-promo-download">
-                <i class="fa-brands fa-google-play"></i> Install App & Check 1000+ Trucks
+            <a href="https://play.google.com/store/apps/details?id=com.aistudio.trucksetuindia.nwzpx" target="_blank" class="btn-strip-install">
+                <i class="fa-brands fa-google-play"></i> Install App
             </a>
         </div>
 
@@ -656,7 +654,7 @@
                 </div>
                 <div class="stat-badge">
                     <span id="statTotal">0</span>
-                    <label>Total Trucks</label>
+                    <label>Total</label>
                 </div>
             </div>
         </div>
@@ -725,7 +723,7 @@
     <div class="floating-app-bar">
         <div class="floating-app-text">
             <i class="fa-solid fa-truck-fast"></i>
-            <span>Install <strong>TruckSetu India App</strong> to check <strong>1000+ Trucks</strong> & Call Sellers</span>
+            <span>Install <strong>TruckSetu India App</strong> (1000+ Trucks)</span>
         </div>
         <a href="https://play.google.com/store/apps/details?id=com.aistudio.trucksetuindia.nwzpx" target="_blank" class="btn-floating-install">
             <i class="fa-brands fa-google-play"></i> Install
@@ -754,7 +752,8 @@
 
             try {
                 // Fetch Seller Profile from Supabase
-                const userRes = await fetch(`${SUPABASE_URL}/users?mobileNumber=eq.${encodeURIComponent(sellerMobile)}`, {
+                const cleanMob = sellerMobile.replace(/[^0-9]/g, '').slice(-10);
+                const userRes = await fetch(`${SUPABASE_URL}/users?mobileNumber=ilike.*${encodeURIComponent(cleanMob)}*`, {
                     headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
                 });
                 const users = await userRes.json();
@@ -851,8 +850,8 @@
                 if (!loadedTrucks || loadedTrucks.length === 0) {
                     gridEl.innerHTML = `
                         <div class="error-state" style="grid-column: 1 / -1;">
-                            <i class="fa-solid fa-truck-fade" style="font-size: 44px; margin-bottom: 12px; color: var(--primary);"></i>
-                            <p style="font-size: 16px;">No trucks currently listed for this store.</p>
+                            <i class="fa-solid fa-truck-fade" style="font-size: 36px; margin-bottom: 10px; color: var(--primary);"></i>
+                            <p style="font-size: 14px;">No trucks currently listed for this store.</p>
                         </div>
                     `;
                     return;
@@ -933,8 +932,8 @@
                 console.error("Error fetching trucks:", err);
                 gridEl.innerHTML = `
                     <div class="error-state" style="grid-column: 1 / -1;">
-                        <i class="fa-solid fa-triangle-exclamation" style="font-size: 44px; margin-bottom: 12px; color: #ef4444;"></i>
-                        <p style="font-size: 16px;">Unable to load trucks from marketplace. Please try again later.</p>
+                        <i class="fa-solid fa-triangle-exclamation" style="font-size: 36px; margin-bottom: 10px; color: #ef4444;"></i>
+                        <p style="font-size: 14px;">Unable to load trucks from marketplace. Please try again later.</p>
                     </div>
                 `;
             }
