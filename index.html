@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruckSetu India - Seller Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #d97706;
+            --primary-dark: #b45309;
+            --secondary: #1e293b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); padding-bottom: 60px; }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white; padding: 16px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky; top: 0; z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1100px; margin: 0 auto; display: flex;
+            justify-content: space-between; align-items: center;
+        }
+
+        .logo-title { display: flex; align-items: center; gap: 12px; text-decoration: none; color: white; }
+        .logo-title i { font-size: 24px; color: var(--primary); }
+        .logo-title h1 { font-size: 20px; font-weight: 700; }
+
+        .btn-download-header {
+            background: var(--primary); color: white; padding: 8px 16px; border-radius: 8px;
+            text-decoration: none; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 6px;
+        }
+
+        .container { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+
+        .seller-banner {
+            background: var(--card-bg); border-radius: 16px; padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid var(--border);
+            margin-bottom: 24px; display: flex; flex-wrap: wrap; justify-content: space-between;
+            align-items: center; gap: 16px;
+        }
+
+        .seller-info h2 { font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+        .seller-info p { color: var(--text-muted); font-size: 14px; display: flex; align-items: center; gap: 6px; }
+        .seller-stats { display: flex; gap: 16px; }
+        .stat-badge { background: #f1f5f9; padding: 8px 16px; border-radius: 8px; text-align: center; }
+        .stat-badge span { display: block; font-size: 18px; font-weight: 700; color: var(--primary); }
+        .stat-badge label { font-size: 12px; color: var(--text-muted); }
+
+        .section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .truck-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+
+        .truck-card {
+            background: var(--card-bg); border-radius: 12px; overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid var(--border);
+            display: flex; flex-direction: column;
+        }
+
+        .truck-img-wrapper { width: 100%; height: 200px; background: #e2e8f0; position: relative; }
+        .truck-img { width: 100%; height: 100%; object-fit: cover; }
+        .badge-sold { position: absolute; top: 10px; right: 10px; background: #ef4444; color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; }
+        .badge-available { position: absolute; top: 10px; right: 10px; background: #22c55e; color: white; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; }
+
+        .truck-details { padding: 16px; flex-grow: 1; display: flex; flex-direction: column; }
+        .truck-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .truck-price { font-size: 20px; font-weight: 800; color: var(--primary); margin-bottom: 12px; }
+        .truck-meta { display: flex; flex-wrap: wrap; gap: 12px; font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+
+        .btn-contact {
+            margin-top: auto; width: 100%; background: var(--secondary); color: white;
+            padding: 10px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;
+            display: flex; justify-content: center; align-items: center; gap: 8px;
+        }
+
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+            display: none; justify-content: center; align-items: center; z-index: 1000; padding: 16px;
+        }
+
+        .modal-card {
+            background: white; border-radius: 16px; max-width: 420px; width: 100%;
+            padding: 28px 24px; text-align: center; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-icon {
+            width: 64px; height: 64px; background: #fef3c7; color: var(--primary);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 28px; margin: 0 auto 16px auto;
+        }
+
+        .btn-playstore {
+            display: block; width: 100%; background: #000000; color: white;
+            padding: 14px; border-radius: 10px; text-decoration: none; font-weight: 700;
+            font-size: 15px; margin-bottom: 10px;
+        }
+
+        .btn-close-modal { background: none; border: none; color: var(--text-muted); cursor: pointer; }
+        .loading-state, .error-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo-title">
+                <i class="fa-solid fa-truck-front"></i>
+                <h1>TruckSetu India</h1>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.aistudio.trucksetuindia.nwzpx" target="_blank" class="btn-download-header">
+                <i class="fa-brands fa-google-play"></i> Get App
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="sellerBanner" class="seller-banner" style="display: none;">
+            <div class="seller-info">
+                <h2 id="sellerName">Seller Store</h2>
+                <p id="sellerCity"><i class="fa-solid fa-location-dot"></i> Verified Seller</p>
+            </div>
+            <div class="seller-stats">
+                <div class="stat-badge"><span id="statAvailable">0</span><label>Available</label></div>
+                <div class="stat-badge"><span id="statTotal">0</span><label>Total Listed</label></div>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="gridTitle">Available Trucks</h2>
+        <div id="truckGrid" class="truck-grid">
+            <div class="loading-state" style="grid-column: 1 / -1;">
+                <p>Loading seller store...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>Download App First</h3>
+            <p style="margin-bottom: 16px; font-size: 14px; color: #64748b;">Please download the <strong>TruckSetu India</strong> app from Google Play Store to contact the seller directly & view complete vehicle documents.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.aistudio.trucksetuindia.nwzpx" target="_blank" class="btn-playstore">
+                <i class="fa-brands fa-google-play"></i> Download App from Play Store
+            </a>
+            <button class="btn-close-modal" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const SUPABASE_URL = "https://lzwgssqosekqkctszojq.supabase.co/rest/v1";
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx6d2dzc3Fvc2VrcWtjdHN6b2pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI2MzgwNjAsImV4cCI6MjA5ODIxNDA2MH0.c8dgYyclooi5uUkdKL7nMWsjIt5Rw9FFfQR5RG7PNJI";
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const sellerMobile = urlParams.get('seller') || urlParams.get('mobile');
+
+        async function initStore() {
+            if (!sellerMobile) {
+                document.getElementById('gridTitle').innerText = "All Listed Trucks";
+                fetchTrucks(null);
+                return;
+            }
+
+            try {
+                const userRes = await fetch(`${SUPABASE_URL}/users?mobileNumber=eq.${encodeURIComponent(sellerMobile)}`, {
+                    headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+                });
+                const users = await userRes.json();
+                if (users && users.length > 0) {
+                    const seller = users[0];
+                    document.getElementById('sellerName').innerText = seller.name || "Truck Seller Store";
+                    document.getElementById('sellerCity').innerHTML = `<i class="fa-solid fa-location-dot"></i> ${seller.city || 'Verified Dealer'}`;
+                    document.getElementById('sellerBanner').style.display = 'flex';
+                }
+                fetchTrucks(sellerMobile);
+            } catch (err) {
+                fetchTrucks(sellerMobile);
+            }
+        }
+
+        async function fetchTrucks(mobile) {
+            const gridEl = document.getElementById('truckGrid');
+            const endpoint = mobile 
+                ? `${SUPABASE_URL}/trucks?sellerMobileNumber=eq.${encodeURIComponent(mobile)}`
+                : `${SUPABASE_URL}/trucks?select=*`;
+
+            try {
+                const res = await fetch(endpoint, {
+                    headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+                });
+                const trucks = await res.json();
+
+                if (!trucks || trucks.length === 0) {
+                    gridEl.innerHTML = `<div class="error-state" style="grid-column: 1 / -1;"><p>No trucks listed in this store yet.</p></div>`;
+                    return;
+                }
+
+                document.getElementById('statAvailable').innerText = trucks.filter(t => !t.isSold).length;
+                document.getElementById('statTotal').innerText = trucks.length;
+
+                gridEl.innerHTML = trucks.map(truck => {
+                    let imageSrc = 'https://via.placeholder.com/400x250?text=TruckSetu+India';
+                    if (truck.base64Photo) {
+                        imageSrc = truck.base64Photo.startsWith('data:') ? truck.base64Photo : `data:image/jpeg;base64,${truck.base64Photo}`;
+                    } else if (truck.photos && truck.photos.length > 0) {
+                        imageSrc = truck.photos[0];
+                    }
+
+                    const formattedPrice = Number(truck.price || 0).toLocaleString('en-IN');
+                    const badge = truck.isSold ? `<span class="badge-sold">SOLD</span>` : `<span class="badge-available">AVAILABLE</span>`;
+
+                    return `
+                        <div class="truck-card">
+                            <div class="truck-img-wrapper">
+                                <img src="${imageSrc}" class="truck-img" alt="${truck.brand} ${truck.model}">
+                                ${badge}
+                            </div>
+                            <div class="truck-details">
+                                <div class="truck-title">${truck.brand || ''} ${truck.model || 'Commercial Truck'}</div>
+                                <div class="truck-price">₹${formattedPrice}</div>
+                                <div class="truck-meta">
+                                    <div><i class="fa-solid fa-calendar"></i> ${truck.manufacturingYear || 'N/A'}</div>
+                                    <div><i class="fa-solid fa-location-dot"></i> ${truck.city || 'India'}</div>
+                                </div>
+                                <button class="btn-contact" onclick="openContactModal()">
+                                    <i class="fa-solid fa-phone"></i> Contact / View Details
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            } catch (err) {
+                gridEl.innerHTML = `<div class="error-state" style="grid-column: 1 / -1;"><p>Unable to load trucks.</p></div>`;
+            }
+        }
+
+        function openContactModal() { document.getElementById('contactModal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('contactModal').style.display = 'none'; }
+        window.onload = initStore;
+    </script>
+</body>
+</html>
