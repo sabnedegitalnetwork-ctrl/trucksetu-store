@@ -20,9 +20,21 @@
             --accent: #22c55e;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text); padding-bottom: 60px; min-height: 100vh; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
 
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding-bottom: 90px;
+            min-height: 100vh;
+        }
+
+        /* Header */
         header {
             background: #090d16;
             color: white;
@@ -42,9 +54,24 @@
             align-items: center;
         }
 
-        .logo-title { display: flex; align-items: center; gap: 12px; text-decoration: none; color: white; }
-        .logo-title i { font-size: 26px; color: var(--primary); }
-        .logo-title h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-title i {
+            font-size: 26px;
+            color: var(--primary);
+        }
+
+        .logo-title h1 {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
 
         .btn-download-header {
             background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
@@ -54,18 +81,97 @@
             text-decoration: none;
             font-weight: 700;
             font-size: 14px;
+            transition: all 0.2s;
             display: flex;
             align-items: center;
             gap: 8px;
             box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
         }
 
-        .container { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+        .btn-download-header:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
+        }
 
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 24px auto;
+            padding: 0 16px;
+        }
+
+        /* App Installation Promo Banner */
+        .app-promo-card {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            border: 1px solid #6366f1;
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 25px rgba(49, 46, 129, 0.4);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .promo-content {
+            max-width: 680px;
+        }
+
+        .promo-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: #000;
+            font-weight: 800;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .promo-content h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .promo-content p {
+            font-size: 14px;
+            color: #c7d2fe;
+            line-height: 1.4;
+        }
+
+        .btn-promo-download {
+            background: #22c55e;
+            color: #000;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 14px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .btn-promo-download:hover {
+            transform: scale(1.03);
+            background: #16a34a;
+            color: #fff;
+        }
+
+        /* Seller Banner */
         .seller-banner {
             background: var(--card-bg);
             border-radius: 16px;
             padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
             border: 1px solid var(--card-border);
             margin-bottom: 24px;
             display: flex;
@@ -75,10 +181,26 @@
             gap: 16px;
         }
 
-        .seller-info h2 { font-size: 24px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
-        .seller-info p { color: var(--text-muted); font-size: 14px; display: flex; align-items: center; gap: 6px; }
+        .seller-info h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
 
-        .seller-stats { display: flex; gap: 16px; }
+        .seller-info p {
+            color: var(--text-muted);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .seller-stats {
+            display: flex;
+            gap: 16px;
+        }
+
         .stat-badge {
             background: #0f172a;
             padding: 10px 18px;
@@ -86,14 +208,41 @@
             border: 1px solid var(--card-border);
             text-align: center;
         }
-        .stat-badge span { display: block; font-size: 20px; font-weight: 800; color: var(--primary); }
-        .stat-badge label { font-size: 12px; color: var(--text-muted); }
 
-        .section-title { font-size: 20px; font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
-        .section-title i { color: var(--primary); }
+        .stat-badge span {
+            display: block;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+        }
 
-        .truck-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 22px; }
+        .stat-badge label {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
 
+        /* Section Title */
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        /* Truck Grid */
+        .truck-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 22px;
+        }
+
+        /* Truck Card */
         .truck-card {
             background: var(--card-bg);
             border-radius: 14px;
@@ -104,8 +253,19 @@
             display: flex;
             flex-direction: column;
             cursor: pointer;
+            position: relative;
         }
-        .truck-card:hover { transform: translateY(-4px); border-color: var(--primary); }
+
+        .truck-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border-color: var(--primary);
+        }
+
+        .truck-card.highlighted-shared {
+            border: 2px solid var(--primary) !important;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+        }
 
         .truck-img-wrapper {
             width: 100%;
@@ -117,22 +277,69 @@
             align-items: center;
             justify-content: center;
         }
-        .truck-img { width: 100%; height: 100%; object-fit: cover; }
+
+        .truck-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
         .badge-status {
             position: absolute;
-            top: 12px; right: 12px;
+            top: 12px;
+            right: 12px;
             padding: 5px 12px;
             border-radius: 6px;
             font-size: 12px;
             font-weight: 800;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
         }
-        .badge-available { background: var(--accent); color: #000; }
-        .badge-sold { background: #ef4444; color: #fff; }
 
-        .truck-details { padding: 18px; flex-grow: 1; display: flex; flex-direction: column; }
-        .truck-title { font-size: 19px; font-weight: 800; margin-bottom: 6px; color: var(--text); }
-        .truck-price { font-size: 22px; font-weight: 800; color: var(--primary); margin-bottom: 14px; }
+        .badge-available {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .badge-sold {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        .badge-shared {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--primary);
+            color: #000;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 800;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        }
+
+        .truck-details {
+            padding: 18px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .truck-title {
+            font-size: 19px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .truck-price {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 14px;
+        }
 
         .truck-meta {
             display: grid;
@@ -145,8 +352,17 @@
             padding: 10px 12px;
             border-radius: 8px;
         }
-        .truck-meta div { display: flex; align-items: center; gap: 6px; }
-        .truck-meta i { color: var(--primary); width: 14px; }
+
+        .truck-meta div {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .truck-meta i {
+            color: var(--primary);
+            width: 14px;
+        }
 
         .btn-contact {
             margin-top: auto;
@@ -159,45 +375,125 @@
             font-weight: 700;
             font-size: 14px;
             cursor: pointer;
+            transition: all 0.2s;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 8px;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
         }
 
+        .btn-contact:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+        }
+
+        /* Detail Modal */
         .modal-overlay {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
             backdrop-filter: blur(6px);
             display: none;
             justify-content: center;
             align-items: center;
             z-index: 1000;
             padding: 16px;
+            overflow-y: auto;
         }
 
         .modal-card {
             background: var(--card-bg);
             border-radius: 18px;
-            max-width: 500px;
+            max-width: 520px;
             width: 100%;
             padding: 24px;
             border: 1px solid var(--card-border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            animation: popIn 0.25s ease-out;
             max-height: 90vh;
             overflow-y: auto;
         }
 
-        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-        .btn-close { background: #0f172a; border: 1px solid var(--card-border); color: var(--text-muted); width: 32px; height: 32px; border-radius: 50%; cursor: pointer; }
+        @keyframes popIn {
+            from { transform: scale(0.92); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
 
-        .modal-gallery { width: 100%; height: 250px; border-radius: 12px; overflow: hidden; background: #000; margin-bottom: 16px; }
-        .modal-gallery img { width: 100%; height: 100%; object-fit: cover; }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
 
-        .modal-spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
-        .spec-item { background: #0f172a; padding: 12px; border-radius: 10px; border: 1px solid var(--card-border); }
-        .spec-item label { font-size: 11px; color: var(--text-muted); display: block; text-transform: uppercase; }
-        .spec-item span { font-size: 14px; font-weight: 700; color: var(--text); }
+        .modal-header h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .btn-close {
+            background: #0f172a;
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .modal-gallery {
+            width: 100%;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .modal-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-spec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .spec-item {
+            background: #0f172a;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+        }
+
+        .spec-item label {
+            font-size: 11px;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .spec-item span {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text);
+        }
 
         .modal-cta-box {
             background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
@@ -205,19 +501,118 @@
             padding: 18px;
             border-radius: 14px;
             text-align: center;
+            margin-top: 10px;
         }
-        .modal-cta-box h4 { font-size: 16px; margin-bottom: 6px; color: white; }
-        .modal-cta-box p { font-size: 13px; color: #c7d2fe; margin-bottom: 14px; }
+
+        .modal-cta-box h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: white;
+        }
+
+        .modal-cta-box p {
+            font-size: 13px;
+            color: #c7d2fe;
+            margin-bottom: 14px;
+        }
 
         .btn-playstore {
-            display: flex; align-items: center; justify-content: center; gap: 8px;
-            width: 100%; background: var(--primary); color: white;
-            padding: 14px; border-radius: 10px; text-decoration: none; font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: var(--primary);
+            color: #000;
+            padding: 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 15px;
+            transition: background 0.2s;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
         }
 
-        .loading-state, .error-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
-        .loading-spinner { font-size: 36px; color: var(--primary); animation: spin 1s linear infinite; margin-bottom: 14px; }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .btn-playstore:hover {
+            background: var(--primary-dark);
+            color: #fff;
+        }
+
+        /* Floating Bottom App Bar */
+        .floating-app-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #090d16;
+            border-top: 2px solid var(--primary);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.6);
+        }
+
+        .floating-app-text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        .floating-app-text i {
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        .btn-floating-install {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+        }
+
+        .loading-state, .error-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+
+        .loading-spinner {
+            font-size: 36px;
+            color: var(--primary);
+            animation: spin 1s linear infinite;
+            margin-bottom: 14px;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .app-promo-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .btn-promo-download {
+                width: 100%;
+                justify-content: center;
+            }
+            .floating-app-text span {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -235,18 +630,40 @@
     </header>
 
     <div class="container">
+
+        <!-- High-Converting Promo Banner -->
+        <div class="app-promo-card">
+            <div class="promo-content">
+                <div class="promo-badge"><i class="fa-solid fa-shield-halved"></i> 1,000+ VERIFIED TRUCKS</div>
+                <h2>Want to Check 1,000+ Commercial Heavy Vehicles?</h2>
+                <p>Install the TruckSetu India App to view seller mobile numbers, RC copies, insurance validity & deal directly without brokerage!</p>
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.aistudio.trucksetuindia.nwzpx" target="_blank" class="btn-promo-download">
+                <i class="fa-brands fa-google-play"></i> Install App & Check 1000+ Trucks
+            </a>
+        </div>
+
+        <!-- Seller Profile Banner -->
         <div id="sellerBanner" class="seller-banner" style="display: none;">
             <div class="seller-info">
                 <h2 id="sellerName">Seller Store</h2>
                 <p id="sellerCity"><i class="fa-solid fa-location-dot"></i> Verified Commercial Dealer</p>
             </div>
             <div class="seller-stats">
-                <div class="stat-badge"><span id="statAvailable">0</span><label>Available</label></div>
-                <div class="stat-badge"><span id="statTotal">0</span><label>Total Trucks</label></div>
+                <div class="stat-badge">
+                    <span id="statAvailable">0</span>
+                    <label>Available</label>
+                </div>
+                <div class="stat-badge">
+                    <span id="statTotal">0</span>
+                    <label>Total Trucks</label>
+                </div>
             </div>
         </div>
 
         <h2 class="section-title" id="gridTitle"><i class="fa-solid fa-truck-ramp-box"></i> Available Commercial Vehicles</h2>
+
+        <!-- Truck List / Grid -->
         <div id="truckGrid" class="truck-grid">
             <div class="loading-state" style="grid-column: 1 / -1;">
                 <i class="fa-solid fa-circle-notch loading-spinner"></i>
@@ -255,26 +672,48 @@
         </div>
     </div>
 
+    <!-- Contact & Truck Details Modal -->
     <div id="truckModal" class="modal-overlay">
         <div class="modal-card">
             <div class="modal-header">
                 <h3 id="modalTruckTitle">Truck Details</h3>
                 <button class="btn-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
             </div>
+
             <div class="modal-gallery">
                 <img id="modalTruckImg" src="" alt="Truck Photo">
             </div>
+
             <div class="modal-spec-grid">
-                <div class="spec-item"><label>Price</label><span id="modalPrice" style="color: var(--primary);">₹0</span></div>
-                <div class="spec-item"><label>Year</label><span id="modalYear">-</span></div>
-                <div class="spec-item"><label>Kilometers</label><span id="modalKm">-</span></div>
-                <div class="spec-item"><label>City</label><span id="modalCity">-</span></div>
-                <div class="spec-item"><label>Ownership</label><span id="modalOwnership">-</span></div>
-                <div class="spec-item"><label>Finance</label><span id="modalFinance">-</span></div>
+                <div class="spec-item">
+                    <label>Price</label>
+                    <span id="modalPrice" style="color: var(--primary);">₹0</span>
+                </div>
+                <div class="spec-item">
+                    <label>Year</label>
+                    <span id="modalYear">-</span>
+                </div>
+                <div class="spec-item">
+                    <label>Kilometers</label>
+                    <span id="modalKm">-</span>
+                </div>
+                <div class="spec-item">
+                    <label>City</label>
+                    <span id="modalCity">-</span>
+                </div>
+                <div class="spec-item">
+                    <label>Ownership</label>
+                    <span id="modalOwnership">-</span>
+                </div>
+                <div class="spec-item">
+                    <label>Finance</label>
+                    <span id="modalFinance">-</span>
+                </div>
             </div>
+
             <div class="modal-cta-box">
                 <h4><i class="fa-solid fa-lock"></i> Contact Seller & View Documents</h4>
-                <p>To contact this verified seller directly, view RC/Insurance copy, or make a deal, please download the official app.</p>
+                <p>To call this verified seller directly, view RC / Insurance copy, or unlock 1,000+ trucks across India, please download our app.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.aistudio.trucksetuindia.nwzpx" target="_blank" class="btn-playstore">
                     <i class="fa-brands fa-google-play"></i> Download App from Play Store
                 </a>
@@ -282,16 +721,31 @@
         </div>
     </div>
 
+    <!-- Sticky Floating Bottom Bar -->
+    <div class="floating-app-bar">
+        <div class="floating-app-text">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Install <strong>TruckSetu India App</strong> to check <strong>1000+ Trucks</strong> & Call Sellers</span>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.aistudio.trucksetuindia.nwzpx" target="_blank" class="btn-floating-install">
+            <i class="fa-brands fa-google-play"></i> Install
+        </a>
+    </div>
+
     <script>
         const SUPABASE_URL = "https://lzwgssqosekqkctszojq.supabase.co/rest/v1";
         const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx6d2dzc3Fvc2VrcWtjdHN6b2pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI2MzgwNjAsImV4cCI6MjA5ODIxNDA2MH0.c8dgYyclooi5uUkdKL7nMWsjIt5Rw9FFfQR5RG7PNJI";
 
+        // Extract query parameters
         const urlParams = new URLSearchParams(window.location.search);
         const sellerMobile = urlParams.get('seller') || urlParams.get('mobile');
+        const targetTruckReg = urlParams.get('truck') || urlParams.get('reg');
+
         let loadedTrucks = [];
 
         async function initStore() {
             const bannerEl = document.getElementById('sellerBanner');
+
             if (!sellerMobile) {
                 document.getElementById('gridTitle').innerHTML = `<i class="fa-solid fa-truck-ramp-box"></i> Listed Marketplace Trucks`;
                 fetchTrucks(null);
@@ -299,57 +753,102 @@
             }
 
             try {
+                // Fetch Seller Profile from Supabase
                 const userRes = await fetch(`${SUPABASE_URL}/users?mobileNumber=eq.${encodeURIComponent(sellerMobile)}`, {
                     headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
                 });
                 const users = await userRes.json();
+                
                 if (users && users.length > 0) {
                     const seller = users[0];
                     document.getElementById('sellerName').innerText = seller.name || "Truck Seller Store";
                     document.getElementById('sellerCity').innerHTML = `<i class="fa-solid fa-location-dot"></i> ${seller.city || 'Verified Commercial Dealer'}`;
                     bannerEl.style.display = 'flex';
                 }
+
+                // Fetch Trucks for this Seller
                 fetchTrucks(sellerMobile);
+
             } catch (err) {
+                console.error("Error initializing store:", err);
                 fetchTrucks(sellerMobile);
             }
         }
 
         function extractImageSrc(truck) {
             let photoList = truck.photos;
+
             if (typeof photoList === 'string') {
-                try { photoList = JSON.parse(photoList); } catch(e) { photoList = [photoList]; }
+                try {
+                    photoList = JSON.parse(photoList);
+                } catch(e) {
+                    photoList = [photoList];
+                }
             }
+
             if (Array.isArray(photoList) && photoList.length > 0) {
                 let first = photoList[0];
                 if (typeof first === 'string' && first.trim().length > 0) {
                     if (first.startsWith('data:') || first.startsWith('http://') || first.startsWith('https://')) {
                         return first;
                     } else {
+                        // Standard Base64 photo stored in app
                         return `data:image/jpeg;base64,${first}`;
                     }
                 }
             }
+
             if (truck.base64Photo) {
                 return truck.base64Photo.startsWith('data:') ? truck.base64Photo : `data:image/jpeg;base64,${truck.base64Photo}`;
             }
+
             return 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80';
         }
 
         async function fetchTrucks(mobile) {
             const gridEl = document.getElementById('truckGrid');
-            const endpoint = mobile 
-                ? `${SUPABASE_URL}/trucks?sellerMobileNumber=eq.${encodeURIComponent(mobile)}`
-                : `${SUPABASE_URL}/trucks?select=*`;
+            let trucks = [];
 
             try {
-                const res = await fetch(endpoint, {
+                // Sanitize mobile for flexible query
+                const cleanMobile = mobile ? mobile.replace(/[^0-9]/g, '').slice(-10) : '';
+                
+                // Primary query endpoint
+                let endpoint = cleanMobile 
+                    ? `${SUPABASE_URL}/trucks?sellerMobileNumber=ilike.*${encodeURIComponent(cleanMobile)}*`
+                    : `${SUPABASE_URL}/trucks?select=*`;
+
+                let res = await fetch(endpoint, {
                     headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
                 });
-                const trucks = await res.json();
+                trucks = await res.json();
+                if (!Array.isArray(trucks)) trucks = [];
+
+                // If no trucks found or targetTruckReg is provided but not in list, fallback to fetching all marketplace trucks
+                if (targetTruckReg) {
+                    const normTarget = targetTruckReg.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+                    let matchedIdx = trucks.findIndex(t => {
+                        const r1 = (t.registrationNumber || t.registrationnumber || t.regNumber || t.reg_number || t.registration_number || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+                        const idStr = (t.id || '').toString().trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+                        return (r1 && (r1 === normTarget || r1.includes(normTarget) || normTarget.includes(r1))) || (idStr && idStr === normTarget);
+                    });
+
+                    // Fallback to fetch all trucks if not found in seller list
+                    if (matchedIdx === -1) {
+                        console.log("Shared truck not found in initial query, fetching all marketplace trucks...");
+                        const fallbackRes = await fetch(`${SUPABASE_URL}/trucks?select=*`, {
+                            headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+                        });
+                        const fallbackTrucks = await fallbackRes.json();
+                        if (Array.isArray(fallbackTrucks) && fallbackTrucks.length > 0) {
+                            trucks = fallbackTrucks;
+                        }
+                    }
+                }
+
                 loadedTrucks = trucks || [];
 
-                if (!trucks || trucks.length === 0) {
+                if (!loadedTrucks || loadedTrucks.length === 0) {
                     gridEl.innerHTML = `
                         <div class="error-state" style="grid-column: 1 / -1;">
                             <i class="fa-solid fa-truck-fade" style="font-size: 44px; margin-bottom: 12px; color: var(--primary);"></i>
@@ -359,25 +858,51 @@
                     return;
                 }
 
-                document.getElementById('statAvailable').innerText = trucks.filter(t => !t.isSold).length;
-                document.getElementById('statTotal').innerText = trucks.length;
+                // If targetTruckReg is provided, re-order trucks so the matching truck is FIRST at the top
+                let autoOpenShared = false;
+                if (targetTruckReg) {
+                    const normTarget = targetTruckReg.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+                    const matchedIdx = loadedTrucks.findIndex(t => {
+                        const r1 = (t.registrationNumber || t.registrationnumber || t.regNumber || t.reg_number || t.registration_number || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+                        const idStr = (t.id || '').toString().trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+                        return (r1 && (r1 === normTarget || r1.includes(normTarget) || normTarget.includes(r1))) || (idStr && idStr === normTarget);
+                    });
 
-                gridEl.innerHTML = trucks.map((truck, idx) => {
+                    if (matchedIdx !== -1) {
+                        const [matchedTruck] = loadedTrucks.splice(matchedIdx, 1);
+                        loadedTrucks.unshift(matchedTruck); // Move target truck to position 0
+                        autoOpenShared = true;
+                        document.getElementById('gridTitle').innerHTML = `<i class="fa-solid fa-star" style="color: var(--primary);"></i> Shared Vehicle Details`;
+                    }
+                }
+
+                // Update Stats
+                const availableCount = loadedTrucks.filter(t => !t.isSold).length;
+                document.getElementById('statAvailable').innerText = availableCount;
+                document.getElementById('statTotal').innerText = loadedTrucks.length;
+
+                // Render Cards
+                gridEl.innerHTML = loadedTrucks.map((truck, idx) => {
                     const imageSrc = extractImageSrc(truck);
                     const formattedPrice = Number(truck.price || 0).toLocaleString('en-IN');
                     const badge = truck.isSold 
                         ? `<span class="badge-status badge-sold">SOLD</span>` 
                         : `<span class="badge-status badge-available">AVAILABLE</span>`;
 
+                    const isTargetShared = autoOpenShared && idx === 0;
+                    const sharedTag = isTargetShared ? `<span class="badge-shared"><i class="fa-solid fa-star"></i> SHARED VEHICLE</span>` : '';
+                    const cardClass = isTargetShared ? 'truck-card highlighted-shared' : 'truck-card';
+
                     const yearText = truck.year || truck.manufacturingYear || 'N/A';
                     const cityText = truck.city || 'India';
-                    const regText = truck.registrationNumber || '';
+                    const regText = truck.registrationNumber || truck.registrationnumber || truck.regNumber || '';
                     const kmText = truck.kilometers ? `${Number(truck.kilometers).toLocaleString('en-IN')} km` : 'N/A';
 
                     return `
-                        <div class="truck-card" onclick="openTruckModal(${idx})">
+                        <div class="${cardClass}" id="truck-card-${idx}" onclick="openTruckModal(${idx})">
                             <div class="truck-img-wrapper">
                                 <img src="${imageSrc}" class="truck-img" alt="${truck.brand} ${truck.model}" onerror="this.src='https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80'">
+                                ${sharedTag}
                                 ${badge}
                             </div>
                             <div class="truck-details">
@@ -397,8 +922,21 @@
                     `;
                 }).join('');
 
+                // Auto open modal for shared truck immediately!
+                if (autoOpenShared) {
+                    setTimeout(() => {
+                        openTruckModal(0);
+                    }, 300);
+                }
+
             } catch (err) {
-                gridEl.innerHTML = `<div class="error-state" style="grid-column: 1 / -1;"><p>Unable to load trucks. Please try again later.</p></div>`;
+                console.error("Error fetching trucks:", err);
+                gridEl.innerHTML = `
+                    <div class="error-state" style="grid-column: 1 / -1;">
+                        <i class="fa-solid fa-triangle-exclamation" style="font-size: 44px; margin-bottom: 12px; color: #ef4444;"></i>
+                        <p style="font-size: 16px;">Unable to load trucks from marketplace. Please try again later.</p>
+                    </div>
+                `;
             }
         }
 
@@ -406,7 +944,8 @@
             const truck = loadedTrucks[index];
             if (!truck) return;
 
-            document.getElementById('modalTruckImg').src = extractImageSrc(truck);
+            const imageSrc = extractImageSrc(truck);
+            document.getElementById('modalTruckImg').src = imageSrc;
             document.getElementById('modalTruckTitle').innerText = `${truck.brand || ''} ${truck.model || 'Truck'}`;
             document.getElementById('modalPrice').innerText = `₹${Number(truck.price || 0).toLocaleString('en-IN')}`;
             document.getElementById('modalYear').innerText = truck.year || truck.manufacturingYear || 'N/A';
@@ -418,8 +957,18 @@
             document.getElementById('truckModal').style.display = 'flex';
         }
 
-        function closeModal() { document.getElementById('truckModal').style.display = 'none'; }
-        window.onclick = function(event) { if (event.target === document.getElementById('truckModal')) closeModal(); }
+        function closeModal() {
+            document.getElementById('truckModal').style.display = 'none';
+        }
+
+        // Close modal when clicking backdrop
+        window.onclick = function(event) {
+            const modal = document.getElementById('truckModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
         window.onload = initStore;
     </script>
 </body>
